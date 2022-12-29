@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import Column2 from './components/Column2';
+import Header from './components/Navbar';
+import SideBar from './components/SideBar';
+import Tab from 'react-bootstrap/Tab';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <div className="container-fluid mt-1 p-0">
+        <div className="row m-0 p-0">
+          <Tab.Container id="left-tabs-example" defaultActiveKey="first">
+            <div className="col-1 m-0 p-0" style={{ width: "5.5%" }}>
+              {<SideBar />}
+            </div>
+            <div className="col-3 border shadow-sm">
+              <Column2 />
+            </div>
+          </Tab.Container>
+          <div className="col-8">
+            Column
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
 
